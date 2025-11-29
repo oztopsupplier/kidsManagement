@@ -1,0 +1,16 @@
+{
+  "name": "kids-management",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "echo \"Start workspace dev: cd apps/web && npm run dev\"",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-path .eslintignore",
+    "format": "prettier --write . --ignore-path .prettierignore",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix --ignore-path .eslintignore"
+  },
+  "devDependencies": {}
+}

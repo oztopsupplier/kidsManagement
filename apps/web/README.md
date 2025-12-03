@@ -1,3 +1,29 @@
+# apps/web
+
+This is the React + Vite web app. Tailwind is pre-configured with the following files:
+
+- `tailwind.config.cjs`
+- `postcss.config.cjs`
+- `src/index.css` includes Tailwind directives (`@tailwind base; @tailwind components; @tailwind utilities;`).
+
+To get started locally:
+
+```bash
+cd apps/web
+# install dependencies
+npm install
+
+# run dev server
+npm run dev
+```
+
+Install Tailwind/PostCSS dependencies if they are not present (run from `apps/web` or root):
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+# optionally run the Tailwind init if you want to regenerate config
+npx tailwindcss init
+```
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

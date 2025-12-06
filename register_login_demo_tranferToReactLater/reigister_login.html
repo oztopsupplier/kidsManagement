@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KindLink - Family Task & Rewards Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <div class="login-container">
+        <!-- Left Brand Section -->
+        <div class="brand-section">
+            <button class="language-switch" onclick="switchToChinese()">
+                <i class="fas fa-globe"></i> 中文
+            </button>
+            
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="logo-text">KindLink</div>
+            </div>
+            <div class="tagline">Making family tasks fun, motivating kids to grow</div>
+            <ul class="features">
+                <li><i class="fas fa-home"></i> Easy family creation & management</li>
+                <li><i class="fas fa-star"></i> Task-based reward system</li>
+                <li><i class="fas fa-check-circle"></i> Parent review & feedback</li>
+                <li><i class="fas fa-chart-line"></i> Progress tracking & visualization</li>
+            </ul>
+        </div>
+        
+        <!-- Right Auth Section -->
+        <div class="auth-section">
+            <div class="auth-tabs">
+                <div class="auth-tab active" onclick="switchTab('login')">Sign In</div>
+                <div class="auth-tab" onclick="switchTab('register')">Sign Up</div>
+            </div>
+            
+            <!-- Login Form -->
+            <div id="login-form" class="auth-form active">
+                <h2 class="form-title">Sign In to Your Account</h2>
+                <div class="input-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" placeholder="Enter your email">
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password">
+                </div>
+                <div class="forgot-password" onclick="showForgotPassword()">Forgot password?</div>
+                <button class="submit-btn" onclick="login()">Sign In</button>
+                <div class="switch-text">
+                    Don't have an account?
+                    <span class="switch-link" onclick="switchTab('register')">Create one now</span>
+                </div>
+            
+                <div class="divider">
+                    <span>Or login with</span>
+                </div>
+                 <div class="social-login">
+                    <div class="social-btn google" title="Google">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="social-btn linkedin" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <div class="social-btn instagram" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="social-btn xbox" title="Xbox">
+                        <i class="fab fa-xbox"></i>
+                    </div>
+                    <div class="social-btn facebook" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="social-btn steam" title="Steam">
+                        <i class="fab fa-steam"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Registration Form -->
+            <div id="register-form" class="auth-form">
+                <h2 class="form-title">Create Your Account</h2>
+                <div class="input-group">
+                    <label for="register-name">Full Name</label>
+                    <input type="text" id="register-name" placeholder="Enter your full name">
+                </div>
+                <div class="input-group">
+                    <label for="register-email">Email Address</label>
+                    <input type="email" id="register-email" placeholder="Enter your email">
+                </div>
+                <div class="input-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" placeholder="At least 6 characters" onkeyup="validatePassword()">
+                    <div class="password-requirements">
+                        <i id="length-icon" class="fas fa-circle requirement-not-met"></i>
+                        <span id="length-text">At least 6 characters</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="register-confirm">Confirm Password</label>
+                    <input type="password" id="register-confirm" placeholder="Re-enter your password" onkeyup="checkPasswordMatch()">
+                    <div class="password-requirements">
+                        <i id="match-icon" class="fas fa-circle requirement-not-met"></i>
+                        <span id="match-text">Passwords must match</span>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label>Select Your Role</label>
+                    <div class="role-selection">
+                        <div class="role-option" onclick="selectRole('parent')">
+                            <input type="radio" id="role-parent" name="role" value="parent" class="hidden-radio">
+                            <div class="role-icon"><i class="fas fa-user-tie"></i></div>
+                            <div class="role-name">Parent</div>
+                            <div class="role-desc">Create family, manage tasks, review submissions</div>
+                        </div>
+                        <div class="role-option" onclick="selectRole('child')">
+                            <input type="radio" id="role-child" name="role" value="child" class="hidden-radio">
+                            <div class="role-icon"><i class="fas fa-child"></i></div>
+                            <div class="role-name">Child</div>
+                            <div class="role-desc">Join family, complete tasks, earn points</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="submit-btn" onclick="register()">Create Account</button>
+                <div class="switch-text">
+                    Already have an account?
+                    <span class="switch-link" onclick="switchTab('login')">Sign in here</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>

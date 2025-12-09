@@ -1,11 +1,12 @@
 :root {
+  /* Default to a light theme (most UIs expect a light background). */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #213547;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,10 +25,12 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* Use normal flow so the app can take full width. */
+  display: block;
   min-width: 320px;
   min-height: 100vh;
+  background-color: inherit;
+  color: inherit;
 }
 
 h1 {
@@ -54,15 +57,16 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
+  /* Dark-mode overrides */
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
   }
   a:hover {
-    color: #747bff;
+    color: #535bf2;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #1a1a1a;
   }
 }
